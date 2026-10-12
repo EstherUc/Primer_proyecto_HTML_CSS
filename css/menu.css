@@ -1,0 +1,372 @@
+
+
+/* ////////////////// MOBILE DESIGN //////////////////// */
+
+
+/* -------------------------------------------
+|                Header Styles               |
+----------------------------------------------*/
+
+header{
+    background-color: var(--bg-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.header__brand-img{
+    width: 75%;
+    max-width: 550px;
+    height: auto;
+}
+
+.header__user a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    
+}
+
+.header__user-icons{
+    width: 30px;
+    height: auto;
+}
+
+
+.header__user span{
+    color: var(--color-primary);
+    font-size: 0.75rem;
+}
+
+
+
+/* -------------------------------------------
+|                Main Styles                  |
+----------------------------------------------*/
+
+/* GRIP PINCIPAL MAIN */
+/* Nombramos cada área para el grid del menu del main*/
+.menu__products{ grid-area: menu;} /* Menú */
+.products{ grid-area: products;} /* Buscador y productos */
+.order__summary{ grid-area: order-summary;} /* Resumen pedido */
+
+.menu{
+    display: grid;
+    grid-template-columns: 1fr; /* 1 columna, */
+    grid-template-areas: 
+    "menu" 
+    "products";
+
+    align-content: start;
+}
+
+.order__summary {
+    grid-area: order-summary;
+    display: none; /* Ocultar aside, el resumen del pedido en versión movil*/
+}
+
+/*  MENU (Menú productos + buscador productos)  */
+
+/* GRIP Interno - Menu productos + buscador */
+.menu__products-categories{ grid-area: categories;} /* menú categorias */
+.menu__products-search{ grid-area: search;} /* buscador de productos */
+
+
+.menu__products{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "categories"
+    "search";
+
+    align-content: start;
+}
+
+/*  MENU (Menú productos + buscador productos)  */
+
+.menu__products-categories{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr)); /* con máximo para que respete el ancho de la pantalla */
+    gap: 15px;
+    padding: 10px;
+
+}
+
+/* Cada categoria */
+.menu__categories{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--menu-bg);
+    border-radius: 12px;
+    padding: 15px;
+
+    transition: backgroung-color 0.2s ease,
+                transform 0.2s ease;
+    
+}
+
+.menu__categories:hover{
+    background-color: #fdd1ca;
+    transform: translateY(-2px);
+}
+
+.menu__categories--active{
+    background-color: var(--menu-bg-hover);
+}
+
+.menu__categories img{
+    width: 45px;
+    height: auto;
+    object-fit: contain; /* mete la imagen en una caja en este caso de 45x45 sin deformarla */
+
+}
+
+.menu__categories span{
+    color: var(--color-primary);
+    font-size: 0.75rem;
+}
+
+/* Buscador */
+
+.menu__search-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    /* para integrar la lupa dentro del input, este div hace de caja-input */
+    border-radius: 8px;
+    border: 1px solid var(--color-border-inputs);
+    background-color: white;
+
+    overflow: hidden; /* Para que todo lo que salga de la forma del input lo recorte (por la lupa) */
+
+}
+
+ /* cambia el estilo de .menu__search-box cuando hacen focus en el input */
+.menu__search-box:focus-within{   
+    border-color: var(--color-secondary);
+}
+
+.menu__search-box input{
+    flex: 1; /* para ocupar todo el espacio disponible */
+    min-width: 0; /* para que no se salga de la pantalla */
+    padding: 8px 10px 8px 10px;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    
+    /* Para integrar la lupa dentro del input */
+    border: none;
+    outline: none;
+    
+}
+
+.menu__search-box button{
+    background-color: transparent;
+    border: none;
+    padding: 8px 10px 8px 10px;
+    cursor: pointer; /* Para que aparezca la mano cuando estamos encima con el ratón  */
+
+}
+
+.menu__search-box button img{
+    display: block;
+    width: 35px;
+    height: 35px;
+}
+
+.menu__search-box button:hover {
+    background-color: var(--menu-bg-hover);
+}
+
+
+/*  PRODUCTOS */
+
+.products{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 15px;
+    gap: 15px;
+}
+
+/* Tarjeta producto */
+
+.product__card{ 
+    display: flex;
+    flex-direction: row;
+    background-color: var(--bg-card);
+    border-radius: 15px;
+    
+    box-shadow: 0 4px 12px rgba(0, 21, 59, 0.18);
+    border: 1px solid rgba(0, 21, 59, 0.10);
+}
+ 
+/* Parte izq - imagen */
+.product__card-img{
+    display: block;
+    width: 40%;
+    height: auto;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+/* Parte derch - contenido */
+.product__card-content{
+    flex: 1; /* Para que ocupe lo que queda */
+    padding: 15px 5px 15px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product__card-content h2{
+    color: var(--color-primary);
+    font-size: 1.3rem;
+}
+
+.product__card-description{
+    color: #6a6e6e;
+    font-size: 0.9rem;
+    padding-right: 8px;
+}
+
+.product__card-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;  /* Así ocupa el espacio vertical que queda disponible*/
+}
+
+.product__card-price{
+    color: #494343;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.product__card-interaction{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+    padding-right: 10px;
+    margin-top: auto; /* Empuja hasta el final el input y el botón */
+}
+
+/* input numérico */
+.product__card-quantity{
+    width: 45px;
+    padding: 5px;
+    border: 1px solid var(--color-border-inputs);
+    border-radius: 6px;
+}
+
+.product__card-interaction button{
+    padding: 6px 10px 6px 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--color-secondary);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+/*  /////////////////////////////////////////////////////////// 
+   //////////////   DESIGNS OF OTHER DEVICES   ///////////////
+/* ////////////////////////////////////////////////////////// */
+
+
+@media (min-width:1024px){
+
+/* -------------------------------------------
+|                Header Styles               |
+----------------------------------------------*/
+
+header{
+     height: 14vh;  
+}
+
+.header__brand{
+    padding: 10px;
+}
+
+
+
+
+/* -------------------------------------------
+|                Main Styles                  |
+----------------------------------------------*/
+
+/*  GRID PRINCIPAL MAIN */
+.menu{
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas, */
+    grid-template-rows: auto 1fr; /* 2 filas*/
+    grid-template-areas: 
+    "menu menu menu" 
+    "products products order-summary";
+}
+
+.order__summary{
+    display: block; /* Para visualizar el aside, el resumen del pedido que estaba oculto en móvil */
+}
+
+
+/*  MENU (Menú productos + buscador productos)  */
+
+/* Grid interno para colocar las distintas categorías del menú (Pizzas, Entrantes...) */
+
+.menu__products{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "categories categories search";
+    align-items: center;
+}
+
+/*  MENU (Menú productos + buscador productos)  */
+
+.menu__products-categories{
+    grid-template-columns: repeat(4, minmax(120px,140px));
+    justify-content: start;
+    padding-left: 15px;
+}
+
+
+
+/*  PRODUCTOS */
+
+.products{
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 20px;
+
+}
+
+.product__card-img{
+    width: 35%;
+}
+
+
+
+/*  RESUMEN PEDIDO */
+
+.order__summary-img{
+    display: block;
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    margin-inline: auto;
+
+}
+
+
+}

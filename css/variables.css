@@ -1,0 +1,13 @@
+:root{
+    --color-primary: #00153B; /* azul marino */
+    --color-secondary: #FF6B5A; /* coral */
+
+    --bg-primary: #FAF9F7; /* blanco roto */
+    --menu-bg: #E4EDF5 ; /* azul clarito */
+    --menu-bg-hover: #FDD1CA; /* coral clarito */
+    --bg-card: #eaece9; /* gris clarito*/
+
+    --color-border-inputs: #40a2f8 ;
+
+
+}

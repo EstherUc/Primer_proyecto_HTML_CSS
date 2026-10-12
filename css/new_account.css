@@ -1,0 +1,194 @@
+/* ////////////////// MOBILE DESIGN //////////////////// */
+
+
+/* -------------------------------------------
+|                Header Styles               |
+----------------------------------------------*/
+
+header{
+    background-color: var(--bg-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.header__brand-img{
+    width: 75%;
+    max-width: 550px;
+    height: auto;
+}
+
+.header__login{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap; /* Para que no salte el texto a otra línea */
+}
+
+.header__login span{
+    color: var(--color-primary);
+}
+
+.header__login a{
+    color: var(--color-secondary);
+    font-weight: bold;
+}
+
+
+
+
+/* -------------------------------------------
+|                Main Styles                  |
+----------------------------------------------*/
+
+.register__content{
+    padding: 20px 15px 15px 20px;
+}
+
+.register__content h1{
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: 20px;
+
+}
+
+/* FORMULARIO */
+
+#register-form{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Fielset - Grupo */
+.register__group{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 15px;
+    background-color: var(--bg-card);  
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 21, 59, 0.18);
+    border: 1px solid rgba(0, 21, 59, 0.10);
+}
+
+/* Título del fieldset - grupo */
+.register__group legend{
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    font-weight: bold;
+    
+    
+
+}
+
+/* Label e input */
+.register__field{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+}
+
+.register__field label{
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.register__field input{
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border-inputs);
+    background-color: white;
+    color: var(--color-primary);
+    font-size: 0.95rem;
+
+}
+
+.register__field input:focus{
+    outline: 2px solid var(--color-secondary);
+    border-color: transparent;
+}
+
+/* Términos */
+.register__terms{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+}
+
+.register__terms a{
+    color: var(--color-secondary);
+    font-weight: bold;
+}
+
+/* Botón */
+.register__button{
+    border-radius: 8px;
+    border: none;
+    background-color: var(--color-secondary);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 15px;
+}
+
+
+
+
+
+
+
+/*  /////////////////////////////////////////////////////////// 
+   //////////////   DESIGNS OF OTHER DEVICES   ///////////////
+/* ////////////////////////////////////////////////////////// */
+
+
+@media (min-width:1024px){
+
+/* -------------------------------------------
+|                Header Styles               |
+----------------------------------------------*/
+
+header{
+     height: 14vh;  
+}
+
+.header__brand{
+    padding: 10px;
+}
+
+
+
+
+/* -------------------------------------------
+|                Main Styles                  |
+----------------------------------------------*/
+
+.register__content{
+    width: 80%;
+    max-width: 1000px;
+    margin-inline: auto; /* para centrarlo horizontal */
+    
+}
+
+/* Fielset - Grupo */
+.register__group{
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    row-gap: 15px;
+}
+
+
+
+
+
+}
